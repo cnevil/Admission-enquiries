@@ -1,5 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http//www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http//www.w3.org/1999/xhtml">
+<?php
+if ($_POST['id']==NULL or $_POST['name']==NULL)
+header("Location: search.php");
+?>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
 <meta name="keywords" content="Hosto, Photography, Photo Images, Responsive, Business, Corporate, Gallery, Notebook" />
@@ -41,7 +45,7 @@
 		});
 	});
 </script>
-<title>Hosto</title>
+<title>查询结果</title>
 </head>
 <body>
 <div class="container-wrap" id="cap"></div>
@@ -50,18 +54,18 @@
   <div class="header-wrapper">
     <!--LOGO-->
     <div class="logo">
-      <h1><a href="index.html"><img src="img/logo.png" alt="" title="" /></a></h1>
+      <h1><a href="index.php"><img src="img/logo.png" alt="" title="" /></a></h1>
     </div>
     <!--MENU-->
     <nav id = "main-nav-menu">
       <ul class="sf-menu">
-        <li><a href="index.html">首页</a>
+        <li><a href="index.php">首页</a>
         </li>
-        <li><a href="lgdphoto.html">校园风光</a></li>
+        <li><a href="lgdphoto.php">校园风光</a></li>
         <li class="active"><a href="#">入学查询</a>
           <ul>
-            <li><a href="search.html">分班查询</a></li>
-            <li><a href="searchresult.html">分班查询结果</a></li>
+            <li><a href="search.php">分班查询</a></li>
+            <li><a href="searchresult.php">分班查询结果</a></li>
             <li><a href="#">我的班级</a></li>
             <li><a href="#">专业课程信息</a></li>
           </ul>
@@ -80,8 +84,8 @@
 <div class="heading-top">
   <h2>查询 <span>结果</span></h2>
   <div id="myslides1">
-    <label>&mdash; 在此您能查看到您的分班信息和班级概况 </label>
-    <label>&mdash; 如果有疑问请及时反馈</label>
+    <label>&mdash; 这里显示的是您的入学分班信息 </label>
+    <label>&mdash; 您可以在此提前认识到你的同班同学</label>
   </div>
 </div>
 <!--SITE CONTAINER-->
@@ -103,12 +107,26 @@
             <th>班级人数</th>
           </tr>
           </thead>
-          <tbody>
-          <tr>
-            <td>test</td>
-            <td>xx15-1</td>
-            <td>29</td>
-          </tr>
+          <?php
+          try{$link=mysql_connect("localhost","root","");
+          mysql_select_db("lgd2015", $link);          //选择数据库
+          $name=$_POST['name'];
+          $id=$_POST['id'];
+          $q = "SELECT class FROM users where name like '$name' and idnumber like '$id'";
+          //SQL查询语句
+          mysql_query("SET NAMES GB2312");
+          $rs = mysql_query($q, $link);                     //获取数据集
+          if(!$rs){die("Valid result!");}
+          $row = mysql_fetch_row($rs);
+          $c = "select count(*) from users where class like '$row[0]'";
+          $rc = mysql_query($c, $link);
+          $rowc = mysql_fetch_row($rc);
+          echo " <tbody><tr>";
+          echo "<td>$name</td><td>$row[0]</td><td>$rowc[0]</td></tr> </tbody>";
+          echo "</table>";
+          mysql_free_result($rs);   }//关闭数据集
+          catch (Exception $name){ }
+          ?>
           </tbody>
         </table>
       </div>
@@ -119,14 +137,16 @@
 
 
     <div class="sidebar">
+      <!--CATEGORIES-->
       <div class="contact-info">
-        <h5>查询不到自己信息？<span class="arrow">&nbsp;</span></h5>
+        <h5>使用过程中有疑问？<span class="arrow">&nbsp;</span></h5>
         <ul class="clear">
-          <li>请仔细核对您的输入是否有误</li>
-          <li>如果确定输入信息正确，那有可能是您的名字中有生僻字导致不能正确查询，请到下方地址回复反馈：</li>
+          <li>无论您是对本站有任何疑问或者建议，亦或是在使用过程中出现了任何问题</li>
+          <li>请点击右上方的反馈或者下方的地址进行留言，我也会尽快的进行回复。</li>
           <li><span>URL:</span> <a>tieba.com</a></li>
         </ul>
       </div>
+    </div>
       <!--CATEGORIES-->
 
     </div>
@@ -138,7 +158,7 @@
   <!--FOOTER-->
   <div id="footer-bot">
     <div class="footer-wrapper">
-      <label>&copy; 2015. 晓风残月 All rights reserved.</label>
+      <label>&copy; 2015. xfcy All rights reserved.</label>
     </div>
   </div>
 </div>

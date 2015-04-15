@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http//www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http//www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
 <meta name="keywords" content="Hosto, Photography, Photo Images, Responsive, Business, Corporate, Gallery, Notebook" />
 <meta name="description" content="Hosto" />
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
@@ -56,19 +56,19 @@
     <!--MENU-->
     <nav id = "main-nav-menu">
       <ul class="sf-menu">
-        <li><a href="index.html">首页</a>
+        <li><a href="index.php">��ҳ</a>
         </li>
-        <li class="active"><a href="lgdphoto.html">校园风光</a></li>
-        <li><a href="#">入学查询</a>
+        <li class="active"><a href="lgdphoto.php">У԰���</a></li>
+        <li><a href="#">��ѧ��ѯ</a>
           <ul>
-            <li><a href="search.html">分班查询</a></li>
-            <li><a href="searchresult.html">分班查询结果</a></li>
-            <li><a href="#">我的班级</a></li>
-            <li><a href="#">专业课程信息</a></li>
+            <li><a href="search.php">�ְ��ѯ</a></li>
+            <li><a href="searchresult.php">�ְ��ѯ���</a></li>
+            <li><a href="#">�ҵİ༶</a></li>
+            <li><a href="#">רҵ�γ���Ϣ</a></li>
           </ul>
         </li>
 
-        <li><a href="contact.html">反馈</a></li>
+        <li><a href="contact.php">����</a></li>
       </ul>
     </nav>
     <!-- end menu -->
@@ -78,10 +78,10 @@
 </div>
 <!--WELCOME-->
 <div class="heading-top">
-  <h2>校园<span>风光</span></h2>
+  <h2>У԰<span>���</span></h2>
   <div id="myslides1">
-    <label>&mdash; 用图片描绘完整的校园 </label>
-    <label>&mdash; 让您在千里之外提前感受学校的独特魅力</label>
+    <label>&mdash; ��ͼƬ���������У԰ </label>
+    <label>&mdash; ������ǧ��֮����ǰ����ѧУ�Ķ�������</label>
   </div>
 </div>
 <!--SITE CONTAINER-->
@@ -92,15 +92,15 @@
     <div class="main-content">
       <!--GALLERY 2 COLUMN PAGE-->
       <div class="welcome">
-        <h2>照片集锦</h2>
+        <h2>��Ƭ����</h2>
       </div>
       <!--GALLERY-->
       <div class="gallery two-columns clear">
         <ul id="portfolio-filter-1">
-          <li><a href="#creative-design" title="" rel="creative-design">校园</a></li>
-          <li><a href="#template-design" title="" rel="template-design">寝室</a></li>
-          <li><a href="#logo-design" title="" rel="logo-design">食堂</a></li>
-          <li><a href="#design" title="" rel="design">体育场</a></li>
+          <li><a href="#creative-design" title="" rel="creative-design">У԰</a></li>
+          <li><a href="#template-design" title="" rel="template-design">����</a></li>
+          <li><a href="#logo-design" title="" rel="logo-design">ʳ��</a></li>
+          <li><a href="#design" title="" rel="design">������</a></li>
           <li><a href="#all" title="">All</a></li>
         </ul>
         <ul id="portfolio-list-1">
@@ -125,22 +125,22 @@
     <div class="sidebar">
       <!--SEARCH-->
       <div>
-        <h4>校史简介 <span class="arrow">&nbsp;</span></h4>
+        <h4>Уʷ��� <span class="arrow">&nbsp;</span></h4>
         <div>
-          <p>辽宁工程技术大学始建于1949年，原名阜新矿业学院，在六十年代初期经院校调整，成为东北地区唯一一所煤炭高等院校，是原煤炭工业部直属的全国重点大学。全国煤炭企业前7名中的多位总经理或董事长毕业于此，学校素有煤炭行业“黄埔军校”的美誉。现任校党委书记潘一山、校长王继仁 。</p>
+          <p>�������̼�����ѧʼ����1949�꣬ԭ�����¿�ҵѧԺ������ʮ������ھ�ԺУ��������Ϊ��������Ψһһ��ú̿�ߵ�ԺУ����ԭú̿��ҵ��ֱ����ȫ���ص��ѧ��ȫ��ú̿��ҵǰ7���еĶ�λ�ܾ������³���ҵ�ڴˣ�ѧУ����ú̿��ҵ�����Ҿ�У��������������У��ί�����һɽ��У�������� ��</p>
         </div>
       </div>
       <!--SOCIABLE-->
       <div>
-        <h4>设施环境 <span class="arrow">&nbsp;</span></h4>
+        <h4>��ʩ���� <span class="arrow">&nbsp;</span></h4>
         <div>
-        <p>辽宁工大教学科研设施完善、学习生活环境幽雅。学校建有阜新校区中华路校园、玉龙校园和葫芦岛校区龙湾校园，占地4240亩，其中阜新校区占地1900亩、葫芦岛校区占地2340亩，校舍建筑面积73万平方米。</p>
+        <p>���������ѧ������ʩ���ơ�ѧϰ��������š�ѧУ���и���У���л�·У԰������У԰�ͺ�«��У������У԰��ռ��4240Ķ�����и���У��ռ��1900Ķ����«��У��ռ��2340Ķ��У�Ὠ�����73��ƽ���ס�</p>
         </div>
       </div>
       <!--CATEGORIES-->
       <div>
-        <h4>招生情况 <span class="arrow">&nbsp;</span></h4>
-        <p>2014年，学校招生计划为7620人，均为全日制本科计划，面向全国26个省（市、自治区）进行招生，全部在本科一批次进行录取，招生类别包括高中起点、专升本、第二学士学位。按照教育部、辽宁省教育厅指示，从2014年起，学校取消专科招生计划。</p>
+        <h4>������� <span class="arrow">&nbsp;</span></h4>
+        <p>2014�꣬ѧУ�����ƻ�Ϊ7620�ˣ���Ϊȫ���Ʊ��Ƽƻ�������ȫ��26��ʡ���С�������������������ȫ���ڱ���һ���ν���¼ȡ������������������㡢ר�������ڶ�ѧʿѧλ�����ս�����������ʡ������ָʾ����2014����ѧУȡ��ר�������ƻ���</p>
       </div>
       <!--SIDEBAR PARAGRAPH-->
 
@@ -153,7 +153,7 @@
   <!--FOOTER-->
   <div id="footer-bot">
     <div class="footer-wrapper">
-      <label>&copy; 2015. 晓风残月 All rights reserved.</label>
+      <label>&copy; 2015. xfcy All rights reserved.</label>
     </div>
   </div>
 </div>

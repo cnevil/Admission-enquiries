@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http//www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http//www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
 <meta name="keywords" content="Hosto, Photography, Photo Images, Responsive, Business, Corporate, Gallery, Notebook" />
 <meta name="description" content="Hosto" />
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
@@ -103,7 +103,7 @@
 			});
 		});
   </script>
-<title>辽工大15届新生入学查询</title>
+<title>�ɹ���15��������ѧ��ѯ</title>
 </head>
 <body>
 <div class="container-wrap" id="cap"></div>
@@ -116,18 +116,18 @@
     <!--MENU-->
     <nav id = "main-nav-menu">
       <ul class="sf-menu">
-        <li class="active"><a href="index.html">首页</a>
+        <li class="active"><a href="index.php">��ҳ</a>
         </li>
-        <li><a href="lgdphoto.html">校园风光</a></li>
-        <li><a href="#">入学查询</a>
+        <li><a href="lgdphoto.php">У԰���</a></li>
+        <li><a href="#">��ѧ��ѯ</a>
           <ul>
-            <li><a href="search.html">分班查询</a></li>
-            <li><a href="searchresult.html">分班查询结果</a></li>
-            <li><a href="#">我的班级</a></li>
-            <li><a href="#">专业课程信息</a></li>
+            <li><a href="search.php">�ְ��ѯ</a></li>
+            <li><a href="searchresult.php">�ְ��ѯ���</a></li>
+            <li><a href="#">�ҵİ༶</a></li>
+            <li><a href="#">רҵ�γ���Ϣ</a></li>
           </ul>
         </li>
-        <li><a href="contact.html">反馈</a></li>
+        <li><a href="contact.php">����</a></li>
       </ul>
     </nav>
     <select id = "responsive-main-nav-menu" onchange = "javascript:window.location.replace(this.value);">
@@ -137,7 +137,7 @@
 </div>
 <!--WELCOME-->
 <div class="small-description-2">
-  <h2>辽工大2015 <span>新生入学 </span>分班查询</h2>
+  <h2>�ɹ���2015 <span>������ѧ </span>�ְ��ѯ</h2>
 </div>
 <!--SITE CONTAINER-->
 <div id="container">
@@ -158,7 +158,7 @@
 <div id="footer" class="clear">
   <div id="footer-bot">
     <div class="footer-wrapper">
-      <label>&copy; 2015. 晓风残月 All rights reserved.</label>
+      <label>&copy; 2015. xfcy All rights reserved.</label>
     </div>
   </div>
 </div>

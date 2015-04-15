@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http//www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http//www.w3.org/1999/xhtml">
 <head>
@@ -41,7 +40,7 @@
 		});
 	});
 </script>
-<title>查询</title>
+<title>锟斤拷询</title>
 </head>
 <body>
 <div class="container-wrap" id="cap"></div>
@@ -50,18 +49,18 @@
   <div class="header-wrapper">
     <!--LOGO-->
     <div class="logo">
-      <h1><a href="index.html"><img src="img/logo.png" alt="" title="" /></a></h1>
+      <h1><a href="index.php"><img src="img/logo.png" alt="" title="" /></a></h1>
     </div>
     <!--MENU-->
     <nav id = "main-nav-menu">
       <ul class="sf-menu">
-        <li><a href="index.html">首页</a>
+        <li><a href="index.php">首页</a>
         </li>
-        <li><a href="lgdphoto.html">校园风光</a></li>
+        <li><a href="lgdphoto.php">校园风光</a></li>
         <li class="active"><a href="#">入学查询</a>
           <ul>
-            <li><a href="search.html">分班查询</a></li>
-            <li><a href="searchresult.html">分班查询结果</a></li>
+            <li><a href="search.php">分班查询</a></li>
+            <li><a href="searchresult.php">分班查询结果</a></li>
             <li><a href="#">我的班级</a></li>
             <li><a href="#">专业课程信息</a></li>
           </ul>
@@ -77,10 +76,10 @@
 </div>
 <!--WELCOME-->
 <div class="heading-top">
-  <h2>分班 <span>查询</span></h2>
+  <h2>入学 <span>查询</span></h2>
   <div id="myslides1">
-    <label>&mdash; 提供最方便的方式查询您的分班信息 </label>
-    <label>&mdash; 并能帮您更轻松的联系到您未来的同学</label>
+    <label>&mdash; 提供新生入学分班结果查询 </label>
+    <label>&mdash; 方便您在入学之前更好的熟悉校园里的人和事</label>
   </div>
 </div>
 <!--SITE CONTAINER-->
@@ -91,19 +90,19 @@
     <div class="main-content">
       <!--FORMS-->
       <div class="form">
-        <h3>请输入您的查询信息：</h3>
-        <form id="cform" action="send.php" method="post">
+        <h3>请输入您的个人信息</h3>
+        <form id="cform" action="searchresult.php" method="post">
           <ul class="clear">
             <li>
-              <label class="la" for="name">姓名：</label>
+              <label class="la" for="name">姓名</label>
               <input type="text" name="name" id="name" class="required" />
             </li>
             <li>
-              <label class="la" for="email">身份证号：</label>
-              <input type="text" name="email" id="email" class="required email" />
+              <label class="la" for="id">身份证号</label>
+              <input type="text" name="id" id="id" class="ID Number" />
             </li>
             <li> <span>
-              <input class="btsubmit" type="submit" name="btsend" value="提交查询" />
+              <input class="btsubmit" type="submit" name="btsend" value="提交" />
               </span> </li>
           </ul>
         </form>
@@ -113,10 +112,10 @@
     <div class="sidebar">
       <!--CATEGORIES-->
       <div class="contact-info">
-        <h5>查询不到自己信息？<span class="arrow">&nbsp;</span></h5>
+        <h5>使用过程中有疑问？<span class="arrow">&nbsp;</span></h5>
         <ul class="clear">
-          <li>请仔细核对您的输入是否有误</li>
-          <li>如果确定输入信息正确，那有可能是您的名字中有生僻字导致不能正确查询，请到下方地址回复反馈：</li>
+          <li>无论您是对本站有任何疑问或者建议，亦或是在使用过程中出现了任何问题</li>
+          <li>请点击右上方的反馈或者下方的地址进行留言，我也会尽快的进行回复。</li>
           <li><span>URL:</span> <a>tieba.com</a></li>
         </ul>
       </div>
@@ -130,7 +129,7 @@
   <!--FOOTER-->
   <div id="footer-bot">
     <div class="footer-wrapper">
-      <label>&copy; 2015. 晓风残月 All rights reserved.</label>
+      <label>&copy; 2015. xfcy All rights reserved.</label>
     </div>
   </div>
 </div>
