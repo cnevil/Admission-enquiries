@@ -2,18 +2,19 @@
 <html xmlns="http//www.w3.org/1999/xhtml">
 <?php
 if ($_GET['session']==NULL)
-header("Location: warning.php");
+header("Location: index.php");
 try{$link=mysql_connect("localhost","root","");
   mysql_select_db("lgd2015", $link);          //选择数据库
   $session=$_GET['session'];
   $q = "SELECT * FROM users where idnumber like '$session'";
-  //SQL查询语句
   mysql_query("SET NAMES GB2312");
   $rs = mysql_query($q, $link);                     //获取数据集
   $row = mysql_fetch_row($rs);
   if($row[0]==NULL){header("Location: search.php");}
   $class = $row[3];
-  mysql_free_result($rs);   }//关闭数据集
+  $infonow=$row[7];
+  mysql_free_result($rs);
+}
 catch (Exception $session){ }
 ?>
 <head>
@@ -135,6 +136,23 @@ catch (Exception $session){ }
           ?>
           </tbody>
         </table>
+        </div>
+      <div class="form">
+        <h3></h3>
+        <h5>我的联系方式</h5>
+        <form id="cform" action="dealling.php" method="post">
+          <ul class="clear">
+            <li>
+              <label class="la" for="info">联系方式(QQ)</label>
+              <?php echo"<input type='text' name='info' id='info' class='required' value='$infonow'' />"; ?>
+            </li>
+            <?php echo "<input type='hidden' name='session' value='$session'>";?>
+              <span>
+              <input class="btsubmit" type="submit" name="btsend" value="提交" />
+              </span>
+            </li>
+          </ul>
+        </form>
       </div>
     </div>
 

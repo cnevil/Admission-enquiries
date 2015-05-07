@@ -112,7 +112,14 @@
     <div class="sidebar">
       <!--CATEGORIES-->
       <div class="contact-info">
-        <h5>使用过程中有疑问？<span class="arrow">&nbsp;</span></h5>
+        <h5>我使用这网站安全吗？<span class="arrow">&nbsp;</span></h5>
+        <ul class="clear">
+          <li>本网站只是为了方便新生，不用来做任何盈利方面的用处</li>
+          <li>各功能模块也都经过逻辑验证，绝对不会泄露您的个人信息。</li>
+        </ul>
+      </div>
+      <div class="contact-info">
+        <h5>使用过程中有其他疑问？<span class="arrow">&nbsp;</span></h5>
         <ul class="clear">
           <li>无论您是对本站有任何疑问或者建议，亦或是在使用过程中出现了任何问题</li>
           <li>请点击右上方的反馈或者下方的地址进行留言，我也会尽快的进行回复。</li>
