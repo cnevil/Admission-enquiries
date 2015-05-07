@@ -126,10 +126,15 @@ header("Location: search.php");
           echo "</table>";
           mysql_free_result($rs);   }//关闭数据集
           catch (Exception $name){ }
+          $url='http://'.$_SERVER['SERVER_NAME'].'/profile.php?session='.$id;
           ?>
           </tbody>
         </table>
       </div>
+      <?php echo"<h5></h5>";
+      echo"<h5>如果你想查看您所在班级的其他同学情况，请点击下方链接：</h5>";
+      echo"<h5><font color='#FF0000'>一旦您点击此链接就代表您同时也同意向本班其他同学公开自己的必要信息，请慎重考虑：</font></h5>";
+      echo"<h4><a href='$url''>我的班级</a></h4>";?>
     </div>
 
 
@@ -137,7 +142,14 @@ header("Location: search.php");
 
 
     <div class="sidebar">
-      <!--CATEGORIES-->
+      <div class="contact-info">
+        <h5>为什么没有我的班级信息？<span class="arrow">&nbsp;</span></h5>
+        <ul class="clear">
+          <li>请返回上一页面检查您的信息是否正确并尝试再次查询</li>
+          <li>当您的姓名中有生僻字时系统也许不能正确返回结果</li>
+          <li>更重要的一点，查询不到不意味着没有被录取，一切以录取通知书和最终到校后得知的分班结果为准</li>
+        </ul>
+      </div>
       <div class="contact-info">
         <h5>使用过程中有疑问？<span class="arrow">&nbsp;</span></h5>
         <ul class="clear">

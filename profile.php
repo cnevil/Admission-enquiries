@@ -1,11 +1,28 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http//www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http//www.w3.org/1999/xhtml">
+<?php
+if ($_GET['session']==NULL)
+header("Location: warning.php");
+try{$link=mysql_connect("localhost","root","");
+  mysql_select_db("lgd2015", $link);          //选择数据库
+  $session=$_GET['session'];
+  $q = "SELECT * FROM users where idnumber like '$session'";
+  //SQL查询语句
+  mysql_query("SET NAMES GB2312");
+  $rs = mysql_query($q, $link);                     //获取数据集
+  $row = mysql_fetch_row($rs);
+  if($row[0]==NULL){header("Location: search.php");}
+  $class = $row[3];
+  mysql_free_result($rs);   }//关闭数据集
+catch (Exception $session){ }
+?>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
 <meta name="keywords" content="Hosto, Photography, Photo Images, Responsive, Business, Corporate, Gallery, Notebook" />
 <meta name="description" content="Hosto" />
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
 <link href="style.css" rel="stylesheet" type="text/css" />
+<link href="table.css" rel="stylesheet" type="text/css" />
 <link href="js/superfish/superfish.css" rel="stylesheet" type="text/css" media="screen" />
 <link href="js/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css" />
 <link href="settings/styling.css" rel="stylesheet" type="text/css" />
@@ -40,7 +57,7 @@
 		});
 	});
 </script>
-<title>入学查询</title>
+<title>我的班级</title>
 </head>
 <body>
 <div class="container-wrap" id="cap"></div>
@@ -70,16 +87,17 @@
       </ul>
     </nav>
     <!-- end menu -->
-    <select id = "responsive-main-nav-menu" onchange = "javascript:window.location.replace(this.value);"></select>
+    <select id = "responsive-main-nav-menu" onchange = "javascript:window.location.replace(this.value);">
+    </select>
   </div>
   <div class="clear"></div>
 </div>
 <!--WELCOME-->
 <div class="heading-top">
-  <h2>入学 <span>查询</span></h2>
+  <h2>我的 <span>班级</span></h2>
   <div id="myslides1">
-    <label>&mdash; 提供新生入学分班结果查询 </label>
-    <label>&mdash; 方便您在入学之前更好的熟悉校园里的人和事</label>
+    <label>&mdash; 这里显示的是您的分班详细信息 </label>
+    <label>&mdash; 您可以在此提前认识到你的同班同学</label>
   </div>
 </div>
 <!--SITE CONTAINER-->
@@ -88,29 +106,51 @@
   <div id="contents" class="clear">
     <!--MAIN CONTENT-->
     <div class="main-content">
-      <!--FORMS-->
-      <div class="form">
-        <h3>请输入您的个人信息</h3>
-        <form id="cform" action="searchresult.php" method="post">
-          <ul class="clear">
-            <li>
-              <label class="la" for="name">姓名</label>
-              <input type="text" name="name" id="name" class="required" />
-            </li>
-            <li>
-              <label class="la" for="id">身份证号</label>
-              <input type="text" name="id" id="id" class="ID Number" />
-            </li>
-            <li> <span>
-              <input class="btsubmit" type="submit" name="btsend" value="提交" />
-              </span> </li>
-          </ul>
-        </form>
+      <!--TABLES-->
+
+
+
+      <div class="widget_contents noPadding">
+        <table class="tables">
+          <thead>
+          <tr>
+            <th>姓名</th>
+            <th>联系方式</th>
+          </tr>
+          </thead>
+          <?php
+          $q = "update users set isopen = 1 WHERE idnumber like '$session'";
+          mysql_query("SET NAMES GB2312");
+          mysql_query($q, $link);                     //获取数据集
+          $c = "select name,info from users where class like '$class' and isopen = 1";
+          $rc = mysql_query($c, $link);
+          //$rowc = mysql_fetch_row($rc);
+          while($rowc=mysql_fetch_array($rc))
+          {echo " <tbody>";
+          echo"<tr>";
+          echo "<td>$rowc[0]</td><td>$rowc[1]</td>" ;
+          echo "</tr>";
+          echo "</tbody>";}
+          mysql_free_result($rc);   //关闭数据
+          ?>
+          </tbody>
+        </table>
       </div>
     </div>
-    <!--SIDEBAR-->
+
+
+
+
+
     <div class="sidebar">
-      <!--CATEGORIES-->
+      <div class="contact-info">
+        <h5>为什么看不到我的班级详细信息？<span class="arrow">&nbsp;</span></h5>
+        <ul class="clear">
+          <li>可能是您班级里还没有人来此查询或公开信息，请多多向身边同专业的宣传本站</li>
+          <li>帮妹纸查信息能增加好感度哦~</li>
+          <li>如果始终得不到班级信息希望能及时向我反馈</li>
+        </ul>
+      </div>
       <div class="contact-info">
         <h5>使用过程中有疑问？<span class="arrow">&nbsp;</span></h5>
         <ul class="clear">
@@ -120,12 +160,14 @@
         </ul>
       </div>
     </div>
+      <!--CATEGORIES-->
+
+    </div>
   </div>
 </div>
+
 <!--Footer-->
 <div id="footer" class="clear">
-  <!--BOTTOM COLUMNS-->
-
   <!--FOOTER-->
   <div id="footer-bot">
     <div class="footer-wrapper">
@@ -135,14 +177,7 @@
 </div>
 <a href="#" id="toTop">&uarr;</a>
 <script type="text/javascript" src="js/custom.js"></script>
-<script type="text/javascript" src="js/jquery.validate.js"></script>
-<script type="text/javascript">
-	$(document).ready(function(){
-		$("#cform").validate();
-	});
-</script>
 <!--FOR PREVIEW ONLY-->
 
-<!--ENDS HERE-->
 </body>
 </html>
