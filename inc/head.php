@@ -29,6 +29,7 @@
 </script>
 <script type="text/javascript" src="js/selectbox.js"></script>
 <script type="text/javascript" src="js/css3-mediaqueries.js"></script>
+<script type="text/javascript" src="js/hover.js"></script>
 <script type="text/javascript" src="js/jquery.tweet.js"></script>
 <script type="text/javascript">
 	jQuery(function($){
