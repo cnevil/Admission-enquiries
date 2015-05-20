@@ -29,8 +29,8 @@
 <script type="text/javascript" src="js/jquery.cycle.all.js"></script>
 <script type="text/javascript" src="js/jcarousel/jquery.elastislide.js"></script>
 <script type='text/javascript'>
-	$(function() {    
-		$('.sociable li a img').tipsy({gravity: 'n'});		
+	$(function() {
+		$('.sociable li a img').tipsy({gravity: 'n'});
 	});
 </script>
 <script type="text/javascript" src="js/selectbox.js"></script>
@@ -154,15 +154,9 @@
     </div>
   </div>
 </div>
+
 <!--Footer-->
-<div id="footer" class="clear">
-  <div id="footer-bot">
-    <div class="footer-wrapper">
-      <label>&copy; 2015. xfcy All rights reserved.</label>
-    </div>
-  </div>
-</div>
-<a href="#" id="toTop">&uarr;</a>
-<script type="text/javascript" src="js/custom.js"></script>
+<?php include "inc/footer.php"; ?>
+
 </body>
 </html>
