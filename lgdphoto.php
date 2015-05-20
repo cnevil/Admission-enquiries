@@ -25,7 +25,6 @@
             <li><a href="#">专业课程信息</a></li>
           </ul>
         </li>
-
         <li><a href="contact.php">反馈</a></li>
       </ul>
     </nav>
@@ -106,9 +105,7 @@
   </div>
 </div>
 <!--Footer-->
-<div id="footer" class="clear">
 
-  <!--FOOTER-->
 <?php include "inc/footer.php"; ?>
 
 </body>

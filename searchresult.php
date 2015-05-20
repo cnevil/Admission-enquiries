@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http//www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <?php
+session_start();
 if ($_POST['id']==NULL or $_POST['name']==NULL)
 header("Location: search.php");
 include "inc/config.php";
@@ -72,17 +72,18 @@ include "inc/head.php";
           $id=$_POST['id'];
           $q = "SELECT class FROM users where name like '$name' and idnumber like '$id'";  //SQL查询语句
           mysql_query("SET NAMES GB2312");
-          $rs = mysql_query($q, $link);                     //获取数据集
+          $rs = @mysql_query($q);                     //获取数据集
           if(!$rs){die("Valid result!");}
+          $_SESSION['id']=$id;
           $row = mysql_fetch_row($rs);
           $c = "select count(*) from users where class like '$row[0]'";
-          $rc = mysql_query($c, $link);
+          $rc = @mysql_query($c);
           $rowc = mysql_fetch_row($rc);
           echo " <tbody><tr>";
           echo "<td>$name</td><td>$row[0]</td><td>$rowc[0]</td></tr> </tbody>";
           echo "</table>";
           mysql_free_result($rs);
-          $url='http://'.$_SERVER['SERVER_NAME'].'/profile.php?session='.$id;
+          $url='http://'.$_SERVER['SERVER_NAME'].'/profile.php';
           ?>
           </tbody>
         </table>

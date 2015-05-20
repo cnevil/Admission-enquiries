@@ -1,13 +1,14 @@
 <?php
-if ($_POST['session']==NULL)
+session_start();
+if (!isset($_SESSION['id']))
     header("Location: index.php");
     include "inc/config.php";
-    $session=$_POST['session'];
+    $id=$_SESSION['id'];
     $info=$_POST['info'];
-    $q = "update users set info = '$info' WHERE idnumber like '$session'";
+    $q = "update users set info = '$info' WHERE idnumber like '$id'";
     mysql_query("SET NAMES GB2312");
-    mysql_query($q, $link);
+    @mysql_query($q);
     mysql_free_result($q);
-    $url='http://'.$_SERVER['SERVER_NAME'].'/profile.php?session='.$session;
+    $url='http://'.$_SERVER['SERVER_NAME'].'/profile.php';
     header("Location: $url");
 ?>

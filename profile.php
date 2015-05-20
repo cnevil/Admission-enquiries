@@ -1,18 +1,18 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http//www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <?php
-if ($_GET['session']==NULL)
-header("Location: index.php");
+session_start();
+if(!isset($_SESSION['id']))
+{header("Location: index.php?test=".$_SESSION['id']);}
 include ("inc/config.php");
-  $session=$_GET['session'];
-  $q = "SELECT * FROM users where idnumber like '$session'";
-  mysql_query("SET NAMES GB2312");
-  $rs = mysql_query($q, $link);                     //获取数据集
-  $row = mysql_fetch_row($rs);
-  if($row[0]==NULL){header("Location: search.php");}
-  $class = $row[3];
-  $infonow=$row[7];
-  mysql_free_result($rs);
-  include "inc/head.php"; ?>
+$id=$_SESSION['id'];
+$q = "SELECT * FROM users where idnumber like '$id'";
+mysql_query("SET NAMES GB2312");
+$rs = @mysql_query($q);                     //获取数据集
+$row = mysql_fetch_row($rs);
+if($row[0]==NULL){header("Location: search.php");}
+$class = $row[3];
+$infonow=$row[7];
+mysql_free_result($rs);
+include "inc/head.php"; ?>
 <title>我的班级</title>
 </head>
 <body>
@@ -75,11 +75,11 @@ include ("inc/config.php");
           </tr>
           </thead>
           <?php
-          $q = "update users set isopen = 1 WHERE idnumber like '$session'";
+          $q = "update users set isopen = 1 WHERE idnumber like '$id'";
           mysql_query("SET NAMES GB2312");
-          mysql_query($q, $link);                     //获取数据集
+          @mysql_query($q);                     //获取数据集
           $c = "select name,info from users where class like '$class' and isopen = 1";
-          $rc = mysql_query($c, $link);
+          $rc = @mysql_query($c);
           //$rowc = mysql_fetch_row($rc);
           while($rowc=mysql_fetch_array($rc))
           {echo " <tbody>";
@@ -101,7 +101,6 @@ include ("inc/config.php");
               <label class="la" for="info">联系方式(QQ)</label>
               <?php echo"<input type='text' name='info' id='info' class='required' value='$infonow'' />"; ?>
             </li>
-            <?php echo "<input type='hidden' name='session' value='$session'>";?>
               <span>
               <input class="btsubmit" type="submit" name="btsend" value="提交" />
               </span>

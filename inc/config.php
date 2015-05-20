@@ -1,4 +1,4 @@
 <?php
-$link=mysql_connect("localhost","root","");
-mysql_select_db("lgd2015", $link);          //选择数据库
+@mysql_connect("localhost","root","");
+@mysql_select_db("lgd2015");          //选择数据库
 ?>
