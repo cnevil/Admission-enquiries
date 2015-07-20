@@ -68,7 +68,7 @@
           </tr>
           </thead>
           <?php
-           $name=remove_xss($_POST['name']);
+           $name=addslashes(remove_xss($_POST['name']));
            $id=intval($_POST['id']);
            $q = "SELECT class FROM users where name like '$name' and idnumber like '$id'";  //SQL²éÑ¯Óï¾ä
            mysql_query("SET NAMES GB2312");
@@ -79,8 +79,9 @@
            $c = "select count(*) from users where class like '$row[0]'";
            $rc = @mysql_query($c);
            $rowc = mysql_fetch_row($rc);
+           $nameprint=htmlspecialchars(nl2br($name));
             echo " <tbody><tr>";
-            echo "<td>$name</td><td>$row[0]</td><td>$rowc[0]</td></tr> </tbody>";
+            echo "<td>$nameprint</td><td>$row[0]</td><td>$rowc[0]</td></tr> </tbody>";
             echo "</table>";
             mysql_free_result($rs);
             $url='http://'.$_SERVER['SERVER_NAME'].'/profile.php';
