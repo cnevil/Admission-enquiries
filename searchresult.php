@@ -1,9 +1,9 @@
 <?php
-session_start();
-if ($_POST['id']==NULL or $_POST['name']==NULL)
-header("Location: search.php");
-include "inc/config.php";
-include "inc/head.php";
+  session_start();
+  if ($_POST['id']==NULL or $_POST['name']==NULL)
+  header("Location: search.php");
+  include "inc/config.php";
+  include "inc/head.php";
 ?>
 <title>查询结果</title>
 </head>
@@ -68,22 +68,22 @@ include "inc/head.php";
           </tr>
           </thead>
           <?php
-          $name=$_POST['name'];
-          $id=$_POST['id'];
-          $q = "SELECT class FROM users where name like '$name' and idnumber like '$id'";  //SQL查询语句
-          mysql_query("SET NAMES GB2312");
-          $rs = @mysql_query($q);                     //获取数据集
-          if(!$rs){die("Valid result!");}
-          $_SESSION['id']=$id;
-          $row = mysql_fetch_row($rs);
-          $c = "select count(*) from users where class like '$row[0]'";
-          $rc = @mysql_query($c);
-          $rowc = mysql_fetch_row($rc);
-          echo " <tbody><tr>";
-          echo "<td>$name</td><td>$row[0]</td><td>$rowc[0]</td></tr> </tbody>";
-          echo "</table>";
-          mysql_free_result($rs);
-          $url='http://'.$_SERVER['SERVER_NAME'].'/profile.php';
+           $name=remove_xss($_POST['name']);
+           $id=intval($_POST['id']);
+           $q = "SELECT class FROM users where name like '$name' and idnumber like '$id'";  //SQL查询语句
+           mysql_query("SET NAMES GB2312");
+           $rs = @mysql_query($q);                     //获取数据集
+            if(!$rs){die("Valid result!");}
+           $_SESSION['id']=$id;
+           $row = mysql_fetch_row($rs);
+           $c = "select count(*) from users where class like '$row[0]'";
+           $rc = @mysql_query($c);
+           $rowc = mysql_fetch_row($rc);
+            echo " <tbody><tr>";
+            echo "<td>$name</td><td>$row[0]</td><td>$rowc[0]</td></tr> </tbody>";
+            echo "</table>";
+            mysql_free_result($rs);
+            $url='http://'.$_SERVER['SERVER_NAME'].'/profile.php';
           ?>
           </tbody>
         </table>
