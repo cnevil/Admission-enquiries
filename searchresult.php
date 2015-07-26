@@ -68,9 +68,9 @@
           </tr>
           </thead>
           <?php
-           $name=addslashes(remove_xss($_POST['name']));
-           $id=intval($_POST['id']);
-           $q = "SELECT class FROM users where name like '$name' and idnumber like '$id'";  //SQL查询语句
+           $name=addslashes(mysql_real_escape_string($_POST['name']));
+           $id=addslashes(mysql_real_escape_string($_POST['id']));
+           $q = "SELECT class,name FROM users where name like '$name' and idnumber like '$id'";  //SQL查询语句
            mysql_query("SET NAMES GB2312");
            $rs = @mysql_query($q);                     //获取数据集
             if(!$rs){die("Valid result!");}
@@ -79,7 +79,7 @@
            $c = "select count(*) from users where class like '$row[0]'";
            $rc = @mysql_query($c);
            $rowc = mysql_fetch_row($rc);
-           $nameprint=htmlspecialchars(nl2br($name));
+           $nameprint=htmlspecialchars(nl2br($name),ENT_COMPAT ,'GB2312');
             echo " <tbody><tr>";
             echo "<td>$nameprint</td><td>$row[0]</td><td>$rowc[0]</td></tr> </tbody>";
             echo "</table>";

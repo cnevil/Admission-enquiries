@@ -1,7 +1,5 @@
 <?php
 session_start();
-if(!isset($_SESSION['id']))
-{header("Location: index.php?test=".$_SESSION['id']);}
 include ("inc/config.php");
 $id=$_SESSION['id'];
 $q = "SELECT * FROM users where idnumber like '$id'";
@@ -10,7 +8,7 @@ $rs = @mysql_query($q);                     //获取数据集
 $row = mysql_fetch_row($rs);
 if($row[0]==NULL){header("Location: search.php");}
 $class = $row[3];
-$infonow=$row[7];
+$infonow=$row[6];
 mysql_free_result($rs);
 include "inc/head.php"; ?>
 <title>我的班级</title>
@@ -98,7 +96,7 @@ include "inc/head.php"; ?>
         <form id="cform" action="dealling.php" method="post">
           <ul class="clear">
             <li>
-              <label class="la" for="info">联系方式(QQ)</label>
+              <label class="la" for="info">联系方式(QQ):</label>
               <?php echo"<input type='text' name='info' id='info' class='required' value='$infonow'' />"; ?>
             </li>
               <span>

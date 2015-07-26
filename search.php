@@ -21,7 +21,7 @@
           <ul>
             <li><a href="search.php">分班查询</a></li>
             <li><a href="searchresult.php">分班查询结果</a></li>
-            <li><a href="#">我的班级</a></li>
+            <li><a href="profile.php">我的班级</a></li>
             <li><a href="#">专业课程信息</a></li>
           </ul>
         </li>
