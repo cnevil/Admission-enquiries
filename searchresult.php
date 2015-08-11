@@ -1,5 +1,6 @@
 <?php
   session_start();
+  session_id($_POST['session']);
   if ($_POST['id']==NULL or $_POST['name']==NULL)
   header("Location: search.php");
   include "inc/config.php";
@@ -84,7 +85,7 @@
             echo "<td>$nameprint</td><td>$row[0]</td><td>$rowc[0]</td></tr> </tbody>";
             echo "</table>";
             mysql_free_result($rs);
-            $url='http://'.$_SERVER['SERVER_NAME'].'/profile.php';
+            $url='profile.php?sessionid='.session_id();
           ?>
           </tbody>
         </table>

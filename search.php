@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http//www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<?php include "inc/head.php"; ?>
+<?php include "inc/head.php";session_start();$sessionid=session_id(); ?>
 <title>入学查询</title>
 </head>
 <body>
@@ -59,8 +59,9 @@
             </li>
             <li>
               <label class="la" for="id">身份证号</label>
-              <input type="text" name="id" id="id" class="ID Number" />
+              <input type="text" name="id" id="id" class="required" />
             </li>
+            <?php echo "<li><input type='hidden' name='session' id='session' value='$sessionid'/></li>"; ?>
             <li> <span>
               <input class="btsubmit" type="submit" name="btsend" value="提交" />
               </span> </li>
@@ -72,10 +73,17 @@
     <div class="sidebar">
       <!--CATEGORIES-->
       <div class="contact-info">
+        <h5>使用须知<span class="arrow">&nbsp;</span></h5>
+        <ul class="clear">
+          <li>如果你使用的浏览器为Chrome或IE则可能会导致无法看到你班级其他同学的信息，但不影响你查询你自己的信息。</li>
+          <li>如果你使用的浏览器为Firefox和Edge不会出现跳转到查询页面的问题，如果出现再次尝试即可。</li>
+        </ul>
+      </div>
+      <div class="contact-info">
         <h5>我使用这网站安全吗？<span class="arrow">&nbsp;</span></h5>
         <ul class="clear">
           <li>本网站只是为了方便新生，不用来做任何盈利方面的用处</li>
-          <li>各功能模块也都经过逻辑验证，绝对不会泄露您的个人信息。</li>
+
         </ul>
       </div>
       <div class="contact-info">

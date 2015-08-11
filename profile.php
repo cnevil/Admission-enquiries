@@ -1,5 +1,6 @@
 <?php
 session_start();
+@session_id($_GET['sessionid']);
 include ("inc/config.php");
 $id=$_SESSION['id'];
 $q = "SELECT * FROM users where idnumber like '$id'";
@@ -96,7 +97,7 @@ include "inc/head.php"; ?>
         <form id="cform" action="dealling.php" method="post">
           <ul class="clear">
             <li>
-              <label class="la" for="info">联系方式(QQ):</label>
+              <label class="la" for="info">Q Q:</label>
               <?php echo"<input type='text' name='info' id='info' class='required' value='$infonow'' />"; ?>
             </li>
               <span>

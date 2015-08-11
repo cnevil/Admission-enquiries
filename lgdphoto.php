@@ -75,7 +75,7 @@
           <li class="logo-design"><a href="img/gallery/large2.jpg" rel="gallery"><span class="rollover-zoom">&nbsp;</span><img src="img/gallery/gall-2-2.jpg" alt="" title="" /></a></li>
         </ul>
       </div>
-      <!--NOTIFY-->
+
 
     </div>
     <!--SIDEBAR-->
@@ -95,10 +95,7 @@
         </div>
       </div>
       <!--CATEGORIES-->
-      <div>
-        <h4>招生情况 <span class="arrow">&nbsp;</span></h4>
-        <p>2014年，学校招生计划为7620人，均为全日制本科计划，面向全国26个省（市、自治区）进行招生，全部在本科一批次进行录取，招生类别包括高中起点、专升本、第二学士学位。按照教育部、辽宁省教育厅指示，从2014年起，学校取消专科招生计划。</p>
-      </div>
+
       <!--SIDEBAR PARAGRAPH-->
 
     </div>

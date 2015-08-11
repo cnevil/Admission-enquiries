@@ -5,6 +5,7 @@ if (!isset($_SESSION['id']))
     include "inc/config.php";
     $id=$_SESSION['id'];
     $info=intval($_POST['info']);
+    if ($info ==2147483647) $info=0;
     $q = "update users set info = '$info' WHERE idnumber like '$id'";
     mysql_query("SET NAMES GB2312");
     @mysql_query($q);
